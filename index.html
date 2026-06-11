@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Filippo Castriota Scanderbeg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f7f6f2;
+      color: #28251d;
+    }
+    header {
+      background: #01696f;
+      color: #f9f8f4;
+      padding: 1rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #f9f8f4;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+      background: #fbfbf9;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      border-bottom: 2px solid #d4d1ca;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #7a7974;
+    }
+    .hero {
+      background: #f3f0ec;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Filippo Castriota Scanderbeg</h1>
+    <nav>
+      <a href="#about">Chi sono</a>
+      <a href="#research">Ricerca</a>
+      <a href="#publications">Pubblicazioni</a>
+      <a href="#contact">Contattami</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <h2>Chi sono</h2>
+      <p>
+        Siamo un gruppo di ricerca con sede a Firenze, impegnato nello studio di <em>[inserisci ambito]</em>.
+        Questo sito raccoglie informazioni su persone, progetti e pubblicazioni.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Ricerca</h2>
+      <p>
+        Qui potrai inserire una descrizione sintetica delle principali linee di ricerca
+        e link a pagine o repository GitHub dedicati ai singoli progetti.
+      </p>
+      <ul>
+        <li><strong>Progetto A</strong> – breve descrizione (anno, tema principale).</li>
+        <li><strong>Progetto B</strong> – breve descrizione.</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Pubblicazioni</h2>
+      <p>
+        Elenco selezionato di articoli, conferenze e report. In futuro potremo spostare
+        questa sezione in una pagina dedicata.
+      </p>
+      <ul>
+        <li>Cognome, Nome (anno). <em>Titolo pubblicazione</em>, rivista/conferenza.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contatti</h2>
+      <p>
+        Email: <a href="mailto:tuoindirizzo@univ.it">tuoindirizzo@univ.it</a><br>
+        Luogo: Firenze, Toscana, Italia
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Filippo Castriota Scanderbeg – All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
