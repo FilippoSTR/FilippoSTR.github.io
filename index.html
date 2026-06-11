@@ -158,8 +158,20 @@
       flex-grow: 1;
     }
 
-    .card a {
-      display: inline-block;
+    .card-actions,
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .card a,
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.4rem 0.75rem;
       border-radius: 999px;
       border: 1px solid var(--primary);
@@ -168,8 +180,23 @@
       font-size: 0.9rem;
     }
 
-    .card a:hover {
+    .contact-links a {
+      width: 2.4rem;
+      min-width: 2.4rem;
+      height: 2.4rem;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    .card a:hover,
+    .contact-links a:hover {
       background: var(--primary-light);
+    }
+
+    .contact-address {
+      font-size: 0.95rem;
+      color: var(--muted);
+      white-space: nowrap;
     }
 
     a {
@@ -259,8 +286,10 @@
         <h3 data-lang="it">Chi sono<br></h3>
         <p data-lang="en">Short bio, CV and portfolio<br></p>
         <p data-lang="it">Breve bio, CV e portfolio<br></p>
-        <a href="about.html" data-lang="en">About me</a>
-        <a href="about.html" data-lang="it">Chi sono</a>
+        <div class="card-actions">
+          <a href="about.html" data-lang="en">About me</a>
+          <a href="about.html" data-lang="it">Chi sono</a>
+        </div>
       </article>
 
       <article class="card">
@@ -268,8 +297,10 @@
         <h3 data-lang="it">Progetti<br></h3>
         <p data-lang="en">Selection of academic and professional projects<br></p>
         <p data-lang="it">Selezione di progetti accademici e professionali<br></p>
-        <a href="projects.html" data-lang="en">Go to Projects</a>
-        <a href="projects.html" data-lang="it">Vai ai Progetti</a>
+        <div class="card-actions">
+          <a href="projects.html" data-lang="en">Go to Projects</a>
+          <a href="projects.html" data-lang="it">Vai ai Progetti</a>
+        </div>
       </article>
 
       <article class="card">
@@ -277,17 +308,24 @@
         <h3 data-lang="it">Ricerca<br></h3>
         <p data-lang="en">Research interests and publications<br></p>
         <p data-lang="it">Interessi di ricerca e pubblicazioni<br></p>
-        <a href="research.html" data-lang="en">Go to Research</a>
-        <a href="research.html" data-lang="it">Vai alla Ricerca</a>
+        <div class="card-actions">
+          <a href="research.html" data-lang="en">Go to Research</a>
+          <a href="research.html" data-lang="it">Vai alla Ricerca</a>
+        </div>
       </article>
 
       <article class="card">
         <h3 data-lang="en">Contact<br></h3>
         <h3 data-lang="it">Contatti<br></h3>
-        <p data-lang="en">Contact details and links<br></p>
-        <p data-lang="it">Dettagli di contatto e link<br></p>
-        <a href="contact.html" data-lang="en">Go to Contact</a>
-        <a href="contact.html" data-lang="it">Vai a Contatti</a>
+        <p data-lang="en">Get in touch via email, phone or LinkedIn.<br></p>
+        <p data-lang="it">Contattami tramite email, telefono o LinkedIn.<br></p>
+        <div class="contact-links">
+          <a href="mailto:filippo.castriotascanderbeg@gmail.com" aria-label="Email">📧</a>
+          <a href="tel:+393280343416" aria-label="Phone">☎️</a>
+          <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗</a>
+          <span class="contact-address" data-lang="en">| Via Palazzo dei Diavoli, Florence, Italy</span>
+          <span class="contact-address" data-lang="it">| Via Palazzo dei Diavoli, 50142 Firenze (FI)</span>
+        </div>
       </article>
     </section>
   </main>
