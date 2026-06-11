@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      try {
+        var saved = window.localStorage.getItem('siteLanguage');
+        if (saved === 'it' || saved === 'en') {
+          document.documentElement.lang = saved;
+        }
+      } catch (e) {
+        // ignore
+      }
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About / Chi Sono – Filippo Castriota Scanderbeg</title>
   <style>
+    [data-lang] { display: none; }
+    html[lang="en"] [data-lang="en"], html[lang="it"] [data-lang="it"] { display: initial; }
     :root {
       --bg: #f7f6f2;
       --surface: #fbfbf9;
@@ -59,14 +73,6 @@
       border-left: 3px solid var(--primary);
       padding-left: 0.5rem;
     }
-    .lang-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.5rem;
-    }
     .bio-block { margin-top: 0.25rem; margin-bottom: 1rem; }
     .downloads a {
       display: inline-block;
@@ -105,50 +111,44 @@
 </head>
 <body>
   <header>
-    <h1>About / Chi Sono</h1>
+    <h1>
+      <span data-lang="en">About</span>
+      <span data-lang="it">Chi Sono</span>
+    </h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="research.html">Research</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-lang="en">Home</a>
+      <a href="index.html" data-lang="it">Home</a>
+      <a href="about.html" data-lang="en">About</a>
+      <a href="about.html" data-lang="it">Chi Sono</a>
+      <a href="projects.html" data-lang="en">Projects</a>
+      <a href="projects.html" data-lang="it">Progetti</a>
+      <a href="research.html" data-lang="en">Research</a>
+      <a href="research.html" data-lang="it">Ricerca</a>
+      <a href="contact.html" data-lang="en">Contact</a>
+      <a href="contact.html" data-lang="it">Contattami</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Profile</h2>
-      <div class="lang-label">EN</div>
-      <p class="bio-block">
-        Civil Engineer with a Master’s Degree in Structural Engineering. Passionate about structural optimization
-        and adaptivity as key drivers for the next generation of sustainable buildings. Skilled in structural analysis,
-        numerical modeling, and advanced simulation using FEM, BIM platforms, and programming languages (MATLAB, Python, C#).
-        Strongly motivated to bridge technological innovation, architectural beauty and sustainability in the construction
-        industry.
+      <h2 data-lang="en">Profile</h2>
+      <h2 data-lang="it">Profilo</h2>
+      <p data-lang="en" class="bio-block">
+        Civil Engineer with a Master’s Degree in Structural Engineering. Passionate about structural optimization and adaptivity as key drivers for the next generation of sustainable buildings. Skilled in structural analysis, numerical modeling, and advanced simulation using FEM, BIM platforms, and programming languages (MATLAB, Python, C#). Strongly motivated to bridge technological innovation, architectural beauty and sustainability in the construction industry.
       </p>
-      <div class="lang-label">IT</div>
-      <p class="bio-block">
-        Ingegnere civile con Laurea Magistrale in Ingegneria Strutturale. Appassionato di ottimizzazione strutturale
-        e strutture adattive come elementi chiave per le costruzioni sostenibili del futuro. Esperto in analisi strutturale,
-        modellazione numerica e simulazione avanzata con software FEM, piattaforme BIM e linguaggi di programmazione
-        (MATLAB, Python, C#). Fortemente motivato a coniugare innovazione tecnologica, armonia architettonica e
-        sostenibilità nel settore delle costruzioni. Aperto, proattivo e desideroso di crescere in contesti lavorativi
-        dinamici e internazionali.
+      <p data-lang="it" class="bio-block">
+        Ingegnere civile con Laurea Magistrale in Ingegneria Strutturale. Appassionato di ottimizzazione strutturale e strutture adattive come elementi chiave per le costruzioni sostenibili del futuro. Esperto in analisi strutturale, modellazione numerica e simulazione avanzata con software FEM, piattaforme BIM e linguaggi di programmazione (MATLAB, Python, C#). Fortemente motivato a coniugare innovazione tecnologica, armonia architettonica e sostenibilità nel settore delle costruzioni.
       </p>
     </section>
 
     <section>
-      <h2>CV</h2>
-      <p>
-        You can download my full CV:
-      </p>
+      <h2 data-lang="en">CV</h2>
+      <h2 data-lang="it">CV</h2>
+      <p data-lang="en">You can download my full CV:</p>
+      <p data-lang="it">Puoi scaricare il mio CV completo:</p>
       <div class="downloads">
-        <a href="assets/CV_2026_ENG.pdf" target="_blank" rel="noopener noreferrer">
-          Download CV - ENG (PDF)
-        </a>
-        <a href="assets/CV_2026_ITA.pdf" target="_blank" rel="noopener noreferrer">
-          Download CV - ITA (PDF)
-        </a>
+        <a href="assets/CV_2026_ENG.pdf" target="_blank" rel="noopener noreferrer" data-lang="en">Download CV - ENG (PDF)</a>
+        <a href="assets/CV_2026_ITA.pdf" target="_blank" rel="noopener noreferrer" data-lang="it">Scarica CV - ITA (PDF)</a>
       </div>
     </section>
   </main>
@@ -157,8 +157,7 @@
     © <span id="year"></span> Filippo Castriota Scanderbeg – All rights reserved.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="lang.js"></script>
 </body>
 </html>

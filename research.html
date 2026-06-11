@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      try {
+        var saved = window.localStorage.getItem('siteLanguage');
+        if (saved === 'it' || saved === 'en') {
+          document.documentElement.lang = saved;
+        }
+      } catch (e) {
+        // ignore
+      }
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research / Ricerca – Filippo Castriota Scanderbeg</title>
   <style>
+    [data-lang] { display: none; }
+    html[lang="en"] [data-lang="en"], html[lang="it"] [data-lang="it"] { display: initial; }
     :root {
       --bg: #f7f6f2;
       --surface: #fbfbf9;
@@ -56,14 +70,6 @@
       border-left: 3px solid var(--primary);
       padding-left: 0.5rem;
     }
-    .lang-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.5rem;
-    }
     .bio-block { margin-top: 0.25rem; margin-bottom: 1rem; }
     ul { padding-left: 1.25rem; }
     li + li { margin-top: 0.4rem; }
@@ -92,39 +98,46 @@
 </head>
 <body>
   <header>
-    <h1>Research / Ricerca</h1>
+    <h1>
+      <span data-lang="en">Research</span>
+      <span data-lang="it">Ricerca</span>
+    </h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="research.html">Research</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-lang="en">Home</a>
+      <a href="index.html" data-lang="it">Home</a>
+      <a href="about.html" data-lang="en">About</a>
+      <a href="about.html" data-lang="it">Chi Sono</a>
+      <a href="projects.html" data-lang="en">Projects</a>
+      <a href="projects.html" data-lang="it">Progetti</a>
+      <a href="research.html" data-lang="en">Research</a>
+      <a href="research.html" data-lang="it">Ricerca</a>
+      <a href="contact.html" data-lang="en">Contact</a>
+      <a href="contact.html" data-lang="it">Contattami</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Research Interests / Interessi di Ricerca</h2>
-      <p class="lang-label">EN</p>
-      <p class="bio-block">
-        Research interests include structural optimization, passive-active systems, adaptive structures and
-        sustainable buildings, with a focus on integrating numerical methods, advanced simulation and design.
+      <h2>
+        <span data-lang="en">Research Interests</span>
+        <span data-lang="it">Interessi di Ricerca</span>
+      </h2>
+      <p data-lang="en" class="bio-block">
+        Research interests include structural optimization, passive-active systems, adaptive structures and sustainable buildings, with a focus on integrating numerical methods, advanced simulation and design.
       </p>
-      <p class="lang-label">IT</p>
-      <p class="bio-block">
-        Gli interessi di ricerca includono ottimizzazione strutturale, sistemi passivi-attivi, strutture adattive
-        ed edifici sostenibili, con particolare attenzione all’integrazione di metodi numerici, simulazione avanzata
-        e progettazione.
+      <p data-lang="it" class="bio-block">
+        Gli interessi di ricerca includono ottimizzazione strutturale, sistemi passivi-attivi, strutture adattive ed edifici sostenibili, con particolare attenzione all’integrazione di metodi numerici, simulazione avanzata e progettazione.
       </p>
     </section>
 
     <section>
-      <h2>Publications / Pubblicazioni</h2>
+      <h2>
+        <span data-lang="en">Publications</span>
+        <span data-lang="it">Pubblicazioni</span>
+      </h2>
       <ul>
         <li>
-          Senatore, G., Castriota Scanderbeg, F., Bartoli, G. (2026). “Topology Optimization of Passive-Active Continua
-          Under Eigenstrain Actuation with a Controlled-Compliance Objective”, abstract accepted for presentation at
-          IASS-IWSS 2026, Turin, Italy, Sep. 14–18, 2026.
+          Senatore, G., Castriota Scanderbeg, F., Bartoli, G. (2026). “Topology Optimization of Passive-Active Continua Under Eigenstrain Actuation with a Controlled-Compliance Objective”, abstract accepted for presentation at IASS-IWSS 2026, Turin, Italy, Sep. 14–18, 2026.
         </li>
       </ul>
     </section>
@@ -134,8 +147,7 @@
     © <span id="year"></span> Filippo Castriota Scanderbeg – All rights reserved.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="lang.js"></script>
 </body>
 </html>

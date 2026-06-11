@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      try {
+        var saved = window.localStorage.getItem('siteLanguage');
+        if (saved === 'it' || saved === 'en') {
+          document.documentElement.lang = saved;
+        }
+      } catch (e) {
+        // ignore
+      }
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects / Progetti – Filippo Castriota Scanderbeg</title>
   <style>
+    [data-lang] { display: none; }
+    html[lang="en"] [data-lang="en"], html[lang="it"] [data-lang="it"] { display: initial; }
     :root {
       --bg: #f7f6f2;
       --surface: #fbfbf9;
@@ -55,15 +69,6 @@
       border-left: 3px solid var(--primary);
       padding-left: 0.5rem;
     }
-    .lang-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.5rem;
-    }
-    .bio-block { margin-top: 0.25rem; margin-bottom: 1rem; }
     .projects-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -85,14 +90,27 @@
       color: var(--muted);
       margin-bottom: 0.4rem;
     }
+    .downloads {
+      margin-top: 1rem;
+    }
+    .downloads a {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .downloads a:hover { background: var(--primary-light); }
+    a { color: var(--primary); }
+    a:hover { text-decoration: underline; }
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.85rem;
       color: var(--muted);
     }
-    a { color: var(--primary); }
-    a:hover { text-decoration: underline; }
     @media (max-width: 640px) {
       header { padding: 0.75rem 1rem; }
       header h1 { font-size: 1.05rem; }
@@ -110,56 +128,58 @@
 </head>
 <body>
   <header>
-    <h1>Projects / Progetti</h1>
+    <h1>
+      <span data-lang="en">Projects</span>
+      <span data-lang="it">Progetti</span>
+    </h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="research.html">Research</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-lang="en">Home</a>
+      <a href="index.html" data-lang="it">Home</a>
+      <a href="about.html" data-lang="en">About</a>
+      <a href="about.html" data-lang="it">Chi Sono</a>
+      <a href="projects.html" data-lang="en">Projects</a>
+      <a href="projects.html" data-lang="it">Progetti</a>
+      <a href="research.html" data-lang="en">Research</a>
+      <a href="research.html" data-lang="it">Ricerca</a>
+      <a href="contact.html" data-lang="en">Contact</a>
+      <a href="contact.html" data-lang="it">Contattami</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Overview</h2>
-      <p class="lang-label">EN</p>
-      <p class="bio-block">
-        A selection of academic and professional projects focused on structural optimization, adaptive structures,
-        and sustainable design. This page can be extended with links to technical reports, repositories, and images.
-      </p>
-      <p class="lang-label">IT</p>
-      <p class="bio-block">
-        Una selezione di progetti accademici e professionali focalizzati su ottimizzazione strutturale, strutture adattive
-        e progettazione sostenibile. Questa pagina può essere estesa con link a report tecnici, repository e immagini.
-      </p>
+      <h2 data-lang="en">Overview</h2>
+      <h2 data-lang="it">Panoramica</h2>
+      <p data-lang="en">A selection of academic and professional projects focused on structural optimization, adaptive structures, and sustainable design. This page can be extended with links to technical reports, repositories, and images.</p>
+      <p data-lang="it">Una selezione di progetti accademici e professionali focalizzati su ottimizzazione strutturale, strutture adattive e progettazione sostenibile. Questa pagina può essere estesa con link a report tecnici, repository e immagini.</p>
     </section>
 
     <section>
-      <h2>Selected Projects / Progetti Selezionati</h2>
+      <h2>
+        <span data-lang="en">Selected Projects</span>
+        <span data-lang="it">Progetti Selezionati</span>
+      </h2>
       <div class="projects-list">
         <article class="project-card">
           <h3>[Project 1]</h3>
-          <p><strong>EN:</strong> Short description (year, role, main technologies).</p>
-          <p><strong>IT:</strong> Breve descrizione (anno, ruolo, principali tecnologie).</p>
+          <p data-lang="en">Short description (year, role, main technologies).</p>
+          <p data-lang="it">Breve descrizione (anno, ruolo, principali tecnologie).</p>
         </article>
         <article class="project-card">
           <h3>[Project 2]</h3>
-          <p><strong>EN:</strong> Short description.</p>
-          <p><strong>IT:</strong> Breve descrizione.</p>
+          <p data-lang="en">Short description.</p>
+          <p data-lang="it">Breve descrizione.</p>
         </article>
       </div>
     </section>
 
     <section>
-      <h2>Portfolio</h2>
-      <p>
-        You can download a selection of projects in the portfolio:
-      </p>
+      <h2 data-lang="en">Portfolio</h2>
+      <h2 data-lang="it">Portfolio</h2>
+      <p data-lang="en">You can download a selection of projects in the portfolio:</p>
+      <p data-lang="it">Puoi scaricare una selezione di progetti nel portfolio:</p>
       <div class="downloads">
-        <a href="assets/Portfolio_FilippoCastriotaScanderbeg.pdf" target="_blank" rel="noopener noreferrer">
-          Download Portfolio (PDF)
-        </a>
+        <a href="assets/Portfolio_FilippoCastriotaScanderbeg.pdf" target="_blank" rel="noopener noreferrer">Portfolio (PDF)</a>
       </div>
     </section>
   </main>
@@ -168,8 +188,7 @@
     © <span id="year"></span> Filippo Castriota Scanderbeg – All rights reserved.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="lang.js"></script>
 </body>
 </html>

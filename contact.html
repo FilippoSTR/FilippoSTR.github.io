@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      try {
+        var saved = window.localStorage.getItem('siteLanguage');
+        if (saved === 'it' || saved === 'en') {
+          document.documentElement.lang = saved;
+        }
+      } catch (e) {
+        // ignore
+      }
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact / Contattami – Filippo Castriota Scanderbeg</title>
   <style>
+    [data-lang] { display: none; }
+    html[lang="en"] [data-lang="en"], html[lang="it"] [data-lang="it"] { display: initial; }
     :root {
       --bg: #f7f6f2;
       --surface: #fbfbf9;
@@ -86,23 +100,32 @@
 </head>
 <body>
   <header>
-    <h1>Contact / Contattami</h1>
+    <h1>
+      <span data-lang="en">Contact</span>
+      <span data-lang="it">Contattami</span>
+    </h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="research.html">Research</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-lang="en">Home</a>
+      <a href="index.html" data-lang="it">Home</a>
+      <a href="about.html" data-lang="en">About</a>
+      <a href="about.html" data-lang="it">Chi Sono</a>
+      <a href="projects.html" data-lang="en">Projects</a>
+      <a href="projects.html" data-lang="it">Progetti</a>
+      <a href="research.html" data-lang="en">Research</a>
+      <a href="research.html" data-lang="it">Ricerca</a>
+      <a href="contact.html" data-lang="en">Contact</a>
+      <a href="contact.html" data-lang="it">Contattami</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Get in touch / Contattami</h2>
-      <p>
-        Feel free to reach out for collaborations, research opportunities, or professional projects.
-        Non esitare a contattarmi per collaborazioni, opportunità di ricerca o progetti professionali.
-      </p>
+      <h2>
+        <span data-lang="en">Get in touch</span>
+        <span data-lang="it">Contattami</span>
+      </h2>
+      <p data-lang="en">Feel free to reach out for collaborations, research opportunities, or professional projects.</p>
+      <p data-lang="it">Non esitare a contattarmi per collaborazioni, opportunità di ricerca o progetti professionali.</p>
       <ul class="contact-list">
         <li>
           <span class="contact-label">E-mail:</span>
@@ -114,12 +137,12 @@
         </li>
         <li>
           <span class="contact-label">LinkedIn:</span>
-          <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer">
-            www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b
-          </a>
+          <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b</a>
         </li>
         <li>
-          <span class="contact-label">Location:</span> Florence, Tuscany, Italy
+          <span class="contact-label" data-lang="en">Location:</span>
+          <span class="contact-label" data-lang="it">Posizione:</span>
+          <span> Florence, Tuscany, Italy</span>
         </li>
       </ul>
     </section>
@@ -129,8 +152,7 @@
     © <span id="year"></span> Filippo Castriota Scanderbeg – All rights reserved.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="lang.js"></script>
 </body>
 </html>
