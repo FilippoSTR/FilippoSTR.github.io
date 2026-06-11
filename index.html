@@ -201,19 +201,46 @@
       white-space: nowrap;
     }
 
+    footer.site-footer {
+      background: #111111;
+      color: #f5f5f5;
+      padding: 2rem 1rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-icons img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      filter: grayscale(1) invert(1);
+    }
+
+    .footer-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     a {
       color: var(--primary);
     }
 
     a:hover {
       text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.85rem;
-      color: var(--muted);
     }
 
     @media (max-width: 640px) {
@@ -316,19 +343,19 @@
         </div>
       </article>
 
-      <article class="hero">
-        <div class="contact-links">
-          <a href="mailto:filippo.castriotascanderbeg@gmail.com" aria-label="Email"><img src="assets/icons8-email-48.png" alt="Email" class="profile-img"></a>
-          <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/icons8-linkedin-50.png" alt="LinkedIn" class="profile-img"></a>
-          <span class="contact-address" data-lang="en">| Via Palazzo dei Diavoli, Florence, Italy</span>
-          <span class="contact-address" data-lang="it">| Via Palazzo dei Diavoli, 50142 Firenze (FI)</span>
-        </div>
-      </article>
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> Filippo Castriota Scanderbeg – All rights reserved.
+<footer class="site-footer">
+    <div class="footer-icons">
+      <a href="mailto:filippo.castriotascanderbeg@gmail.com" aria-label="Email">
+        <img src="assets/icons8-email-48.png" alt="Email">
+      </a>
+      <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="assets/icons8-linkedin-50.png" alt="LinkedIn">
+      </a>
+    </div>
+    <div class="footer-meta">© Filippo Castriota Scanderbeg <span id="year">2026</span></div>
   </footer>
 
   <script>
