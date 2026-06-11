@@ -23,15 +23,15 @@
     [data-lang] { display: none; }
     html[lang="en"] [data-lang="en"], html[lang="it"] [data-lang="it"] { display: initial; }
     :root {
-      --bg: #f7f6f2;
-      --surface: #fbfbf9;
-      --surface-alt: #f3f0ec;
-      --text: #28251d;
-      --muted: #7a7974;
-      --border: #d4d1ca;
-      --primary: #01696f;
-      --primary-light: #cedcd8;
-    }
+  --bg:           #f2f2f2;
+  --surface:      #ffffff;
+  --surface-alt:  #e5e5e5;
+  --text:         #1c1c1c;
+  --muted:        #6c6c6c;
+  --border:       #d4d4d4;
+  --primary:      #1c1c1c;
+  --primary-light:#dcdcdc;
+}
 
     * {
       box-sizing: border-box;
@@ -47,15 +47,15 @@
     }
 
     header {
-      background: #D3D3D3;
-      color: #000;
-      padding: 1rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-    }
+  background: #303030;
+  color: #f8f8f8;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
 
     header h1 {
       font-size: 1.3rem;
@@ -69,35 +69,35 @@
     }
 
     nav a {
-      color: #000;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
+  color: #f8f8f8;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
 
     nav a:hover {
       text-decoration: underline;
     }
 
     .lang-switcher {
-      display: inline-flex;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 248, 248, 0.6);
+  overflow: hidden;
+}
 
     .lang-btn {
-      background: transparent;
-      border: none;
-      color: #000;
-      font-size: 0.85rem;
-      padding: 0.25rem 0.6rem;
-      cursor: pointer;
-    }
+  background: transparent;
+  border: none;
+  color: #f8f8f8;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
 
     .lang-btn.active-lang {
-      background: #000;
-      color: #D3D3D3;
-    }
+  background: #f8f8f8;
+  color: #303030;
+}
 
     main {
       max-width: 960px;
@@ -132,13 +132,11 @@
       padding: 0 1.25rem 1.5rem;
     }
 
-    .card {
-      background: #fff;
+    .card,
+    .project-card {
+      background: #ffffff;
       border-radius: 0.5rem;
       border: 1px solid var(--border);
-      padding: 1rem 1rem 1.25rem;
-      display: flex;
-      flex-direction: column;
     }
 
     .card h3 {
