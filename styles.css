@@ -167,7 +167,9 @@ main {
 
 .contact-address { font-size: 0.95rem; color: var(--muted); white-space: nowrap; }
 
-a { color: #ffffff; }
+a { color: #ffffff;
+    text-decoration: none;
+}
 a:hover { text-decoration: none; }
 
 /* Bottoni download CV/Portfolio (about & projects) */
