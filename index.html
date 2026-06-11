@@ -1,114 +1,300 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Filippo Castriota Scanderbeg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filippo Castriota Scanderbeg – Structural Engineer</title>
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    :root {
+      --bg: #f7f6f2;
+      --surface: #fbfbf9;
+      --surface-alt: #f3f0ec;
+      --text: #28251d;
+      --muted: #7a7974;
+      --border: #d4d1ca;
+      --primary: #01696f;
+      --primary-light: #cedcd8;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background: #f7f6f2;
-      color: #28251d;
     }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
-      background: #01696f;
+      background: var(--primary);
       color: #f9f8f4;
       padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
+
     nav a {
       color: #f9f8f4;
-      margin-right: 1rem;
+      margin-left: 1rem;
       text-decoration: none;
       font-size: 0.95rem;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     main {
       max-width: 960px;
       margin: 2rem auto;
       padding: 0 1rem 3rem;
-      background: #fbfbf9;
+      background: var(--surface);
+      border-radius: 0.5rem;
+      box-shadow:
+        0 1px 2px rgba(0,0,0,0.04),
+        0 4px 12px rgba(0,0,0,0.04);
     }
+
     section {
-      margin-bottom: 2.5rem;
+      padding: 1.5rem 1.25rem;
+      border-bottom: 1px solid var(--border);
     }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
     h2 {
-      border-bottom: 2px solid #d4d1ca;
-      padding-bottom: 0.25rem;
-      margin-bottom: 0.75rem;
       font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      border-left: 3px solid var(--primary);
+      padding-left: 0.5rem;
     }
+
+    .hero {
+      background: var(--surface-alt);
+      border-radius: 0.5rem;
+      margin: 1.5rem 1.25rem 0;
+      padding: 1.5rem 1.25rem;
+    }
+
+    .hero h2 {
+      border-left-color: transparent;
+      padding-left: 0;
+    }
+
+    .lang-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.5rem;
+    }
+
+    .bio-block {
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .downloads a {
+      display: inline-block;
+      margin-right: 0.75rem;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .downloads a:hover {
+      background: var(--primary-light);
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 0.4rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.85rem;
-      color: #7a7974;
+      color: var(--muted);
     }
-    .hero {
-      background: #f3f0ec;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 0.5rem;
+
+    @media (max-width: 640px) {
+      header {
+        padding: 0.75rem 1rem;
+      }
+      header h1 {
+        font-size: 1.05rem;
+      }
+      nav a {
+        margin-left: 0.5rem;
+        font-size: 0.85rem;
+      }
+      main {
+        margin: 1.5rem 0.5rem 2rem;
+        padding: 0.5rem 0.3rem 2rem;
+      }
+      section,
+      .hero {
+        margin: 1rem 0.5rem 0;
+        padding: 1rem 0.75rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Filippo Castriota Scanderbeg</h1>
+    <h1>Filippo Castriota Scanderbeg – Structural Engineer</h1>
     <nav>
-      <a href="#about">Chi sono</a>
-      <a href="#research">Ricerca</a>
-      <a href="#publications">Pubblicazioni</a>
-      <a href="#contact">Contattami</a>
+      <a href="#about">About / Chi Sono</a>
+      <a href="#projects">Projects / Progetti</a>
+      <a href="#research">Research / Ricerca</a>
+      <a href="#contact">Contact / Contattami</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="about">
-      <h2>Chi sono</h2>
-      <p>
-        Siamo un gruppo di ricerca con sede a Firenze, impegnato nello studio di <em>[inserisci ambito]</em>.
-        Questo sito raccoglie informazioni su persone, progetti e pubblicazioni.
+    <!-- About / Chi Sono -->
+    <section id="about" class="hero">
+      <h2>About / Chi Sono</h2>
+
+      <div class="lang-label">EN</div>
+      <p class="bio-block">
+        Civil Engineer with a Master’s Degree in Structural Engineering. Passionate about structural optimization
+        and adaptivity as key drivers for the next generation of sustainable buildings. Skilled in structural analysis,
+        numerical modeling, and advanced simulation using FEM, BIM platforms, and programming languages (MATLAB, Python, C#).
+        Strongly motivated to bridge technological innovation, architectural beauty and sustainability in the construction
+        industry.
       </p>
+
+      <div class="lang-label">IT</div>
+      <p class="bio-block">
+        Ingegnere civile con Laurea Magistrale in Ingegneria Strutturale. Appassionato di ottimizzazione strutturale
+        e strutture adattive come elementi chiave per le costruzioni sostenibili del futuro. Esperto in analisi strutturale,
+        modellazione numerica e simulazione avanzata con software FEM, piattaforme BIM e linguaggi di programmazione
+        (MATLAB, Python, C#). Fortemente motivato a coniugare innovazione tecnologica, armonia architettonica e
+        sostenibilità nel settore delle costruzioni. Aperto, proattivo e desideroso di crescere in contesti lavorativi
+        dinamici e internazionali.
+      </p>
+
+      <div class="downloads">
+        <a href="assets/CV_FilippoCastriotaScanderbeg.pdf" target="_blank" rel="noopener noreferrer">
+          Download CV (PDF)
+        </a>
+        <a href="assets/Portfolio_FilippoCastriotaScanderbeg.pdf" target="_blank" rel="noopener noreferrer">
+          Download Portfolio (PDF)
+        </a>
+      </div>
     </section>
 
+    <!-- Projects / Progetti -->
+    <section id="projects">
+      <h2>Projects / Progetti</h2>
+      <p class="lang-label">EN</p>
+      <p class="bio-block">
+        A selection of academic and professional projects focused on structural optimization, adaptive structures,
+        and sustainable design. This section can be expanded with dedicated pages and links to repositories or
+        technical reports.
+      </p>
+      <p class="lang-label">IT</p>
+      <p class="bio-block">
+        Una selezione di progetti accademici e professionali focalizzati su ottimizzazione strutturale, strutture adattive
+        e progettazione sostenibile. Questa sezione potrà essere ampliata con pagine dedicate e link a repository
+        o report tecnici.
+      </p>
+      <ul>
+        <li><strong>[Project 1]</strong> – breve descrizione (anno, ruolo, tecnologie principali).</li>
+        <li><strong>[Project 2]</strong> – breve descrizione.</li>
+      </ul>
+    </section>
+
+    <!-- Research / Ricerca -->
     <section id="research">
-      <h2>Ricerca</h2>
-      <p>
-        Qui potrai inserire una descrizione sintetica delle principali linee di ricerca
-        e link a pagine o repository GitHub dedicati ai singoli progetti.
+      <h2>Research / Ricerca</h2>
+      <p class="lang-label">EN</p>
+      <p class="bio-block">
+        Research interests include structural optimization, passive-active systems, and adaptive structures for
+        sustainable buildings. Below you can find selected publications.
       </p>
+      <p class="lang-label">IT</p>
+      <p class="bio-block">
+        Gli interessi di ricerca includono ottimizzazione strutturale, sistemi passivi-attivi e strutture adattive
+        per edifici sostenibili. Di seguito alcune pubblicazioni selezionate.
+      </p>
+
+      <h3>Publications / Pubblicazioni</h3>
       <ul>
-        <li><strong>Progetto A</strong> – breve descrizione (anno, tema principale).</li>
-        <li><strong>Progetto B</strong> – breve descrizione.</li>
+        <li>
+          Senatore, G., Castriota Scanderbeg, F., Bartoli, G. (2026). “Topology Optimization of Passive-Active Continua
+          Under Eigenstrain Actuation with a Controlled-Compliance Objective”, abstract accepted for presentation at
+          IASS-IWSS 2026, Turin, Italy, Sep. 14–18, 2026.
+        </li>
       </ul>
     </section>
 
-    <section id="publications">
-      <h2>Pubblicazioni</h2>
-      <p>
-        Elenco selezionato di articoli, conferenze e report. In futuro potremo spostare
-        questa sezione in una pagina dedicata.
-      </p>
-      <ul>
-        <li>Cognome, Nome (anno). <em>Titolo pubblicazione</em>, rivista/conferenza.</li>
-      </ul>
-    </section>
-
+    <!-- Contact / Contattami -->
     <section id="contact">
-      <h2>Contatti</h2>
-      <p>
-        Email: <a href="mailto:tuoindirizzo@univ.it">tuoindirizzo@univ.it</a><br>
-        Luogo: Firenze, Toscana, Italia
-      </p>
+      <h2>Contact / Contattami</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">E-mail:</span>
+          <a href="mailto:filippo.castriotascanderbeg@gmail.com">filippo.castriotascanderbeg@gmail.com</a>
+        </li>
+        <li>
+          <span class="contact-label">Phone / Cell:</span>
+          <a href="tel:+393280343416">+39 328 0343416</a>
+        </li>
+        <li>
+          <span class="contact-label">LinkedIn:</span>
+          <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer">
+            www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b
+          </a>
+        </li>
+        <li>
+          <span class="contact-label">Location:</span> Florence, Tuscany, Italy
+        </li>
+      </ul>
     </section>
   </main>
 
