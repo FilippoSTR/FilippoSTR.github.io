@@ -68,7 +68,7 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 nav a.active {
@@ -166,9 +166,6 @@ main {
 .contact-links a:hover { background: var(--primary-light); }
 
 .contact-address { font-size: 0.95rem; color: var(--muted); white-space: nowrap; }
-
-/*a { color: var(--primary); }*/
-/*a:hover { text-decoration: underline; }*/
 
 a { color: #ffffff; }
 a:hover { text-decoration: none; }
