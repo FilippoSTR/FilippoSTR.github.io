@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Filippo Castriota Scanderbeg – Structural Engineer</title>
+  <title>Filippo Castriota Scanderbeg – Home</title>
   <style>
     :root {
       --bg: #f7f6f2;
@@ -66,52 +66,48 @@
         0 4px 12px rgba(0,0,0,0.04);
     }
 
-    section {
-      padding: 1.5rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-      border-left: 3px solid var(--primary);
-      padding-left: 0.5rem;
-    }
-
     .hero {
       background: var(--surface-alt);
       border-radius: 0.5rem;
-      margin: 1.5rem 1.25rem 0;
+      margin: 1.5rem 1.25rem 2rem;
       padding: 1.5rem 1.25rem;
     }
 
     .hero h2 {
-      border-left-color: transparent;
-      padding-left: 0;
+      margin-bottom: 0.75rem;
     }
 
-    .lang-label {
-      font-size: 0.85rem;
-      font-weight: 600;
+    .hero p {
+      margin-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1.25rem 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      padding: 1rem 1rem 1.25rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
-    .bio-block {
-      margin-top: 0.25rem;
-      margin-bottom: 1rem;
-    }
-
-    .downloads a {
+    .card a {
       display: inline-block;
-      margin-right: 0.75rem;
-      margin-top: 0.5rem;
       padding: 0.4rem 0.75rem;
       border-radius: 999px;
       border: 1px solid var(--primary);
@@ -120,29 +116,8 @@
       font-size: 0.9rem;
     }
 
-    .downloads a:hover {
+    .card a:hover {
       background: var(--primary-light);
-    }
-
-    ul {
-      padding-left: 1.25rem;
-    }
-
-    li + li {
-      margin-top: 0.4rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .contact-list li + li {
-      margin-top: 0.35rem;
-    }
-
-    .contact-label {
-      font-weight: 600;
     }
 
     a {
@@ -175,10 +150,11 @@
         margin: 1.5rem 0.5rem 2rem;
         padding: 0.5rem 0.3rem 2rem;
       }
-      section,
-      .hero {
-        margin: 1rem 0.5rem 0;
-        padding: 1rem 0.75rem;
+      .hero, .grid {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   </style>
@@ -187,121 +163,51 @@
   <header>
     <h1>Filippo Castriota Scanderbeg – Structural Engineer</h1>
     <nav>
-      <a href="#about">About / Chi Sono</a>
-      <a href="#projects">Projects / Progetti</a>
-      <a href="#research">Research / Ricerca</a>
-      <a href="#contact">Contact / Contattami</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About / Chi Sono</a>
+      <a href="projects.html">Projects / Progetti</a>
+      <a href="research.html">Research / Ricerca</a>
+      <a href="contact.html">Contact / Contattami</a>
     </nav>
   </header>
 
   <main>
-    <!-- About / Chi Sono -->
-    <section id="about" class="hero">
-      <h2>About / Chi Sono</h2>
-
-      <div class="lang-label">EN</div>
-      <p class="bio-block">
-        Civil Engineer with a Master’s Degree in Structural Engineering. Passionate about structural optimization
-        and adaptivity as key drivers for the next generation of sustainable buildings. Skilled in structural analysis,
-        numerical modeling, and advanced simulation using FEM, BIM platforms, and programming languages (MATLAB, Python, C#).
-        Strongly motivated to bridge technological innovation, architectural beauty and sustainability in the construction
-        industry.
+    <section class="hero">
+      <h2>Welcome / Benvenuto</h2>
+      <p>
+        This website presents my profile, projects, research activities and publications as a structural engineer
+        based in Florence, Tuscany.
       </p>
-
-      <div class="lang-label">IT</div>
-      <p class="bio-block">
-        Ingegnere civile con Laurea Magistrale in Ingegneria Strutturale. Appassionato di ottimizzazione strutturale
-        e strutture adattive come elementi chiave per le costruzioni sostenibili del futuro. Esperto in analisi strutturale,
-        modellazione numerica e simulazione avanzata con software FEM, piattaforme BIM e linguaggi di programmazione
-        (MATLAB, Python, C#). Fortemente motivato a coniugare innovazione tecnologica, armonia architettonica e
-        sostenibilità nel settore delle costruzioni. Aperto, proattivo e desideroso di crescere in contesti lavorativi
-        dinamici e internazionali.
+      <p>
+        Questo sito presenta il mio profilo, i progetti, le attività di ricerca e le pubblicazioni come ingegnere
+        strutturista con base a Firenze, Toscana.
       </p>
-
-      <div class="downloads">
-        <a href="assets/CV_2026_ENG.pdf" target="_blank" rel="noopener noreferrer">
-          Download CV - ENG (PDF)
-        </a>
-        <a href="assets/CV_2026_ITA.pdf" target="_blank" rel="noopener noreferrer">
-          Download CV - ITA (PDF)
-        </a>
-      </div>
     </section>
 
-    <!-- Projects / Progetti -->
-    <section id="projects">
-      <h2>Projects / Progetti</h2>
-      <p class="lang-label">EN</p>
-      <p class="bio-block">
-        A selection of academic and professional projects focused on structural optimization, adaptive structures,
-        and sustainable design. This section can be expanded with dedicated pages and links to repositories or
-        technical reports.
-      </p>
-      <p class="lang-label">IT</p>
-      <p class="bio-block">
-        Una selezione di progetti accademici e professionali focalizzati su ottimizzazione strutturale, strutture adattive
-        e progettazione sostenibile. Questa sezione potrà essere ampliata con pagine dedicate e link a repository
-        o report tecnici.
-      </p>
-      <ul>
-        <li><strong>[Project 1]</strong> – breve descrizione (anno, ruolo, tecnologie principali).</li>
-        <li><strong>[Project 2]</strong> – breve descrizione.</li>
-      </ul>
+    <section class="grid">
+      <article class="card">
+        <h3>About / Chi Sono</h3>
+        <p>Short bilingual bio and links to download CV and portfolio.</p>
+        <a href="about.html">Go to About</a>
+      </article>
 
-      <div class="downloads">
-        <a href="assets/Portfolio_FCS.pdf" target="_blank" rel="noopener noreferrer">
-            Download Portfolio (PDF)
-        </a>
-      </div>
-      
-    </section>
+      <article class="card">
+        <h3>Projects / Progetti</h3>
+        <p>Selection of academic and professional projects in structural engineering.</p>
+        <a href="projects.html">Go to Projects</a>
+      </article>
 
-    <!-- Research / Ricerca -->
-    <section id="research">
-      <h2>Research / Ricerca</h2>
-      <p class="lang-label">EN</p>
-      <p class="bio-block">
-        Research interests include structural optimization, passive-active systems, and adaptive structures for
-        sustainable buildings. Below you can find selected publications.
-      </p>
-      <p class="lang-label">IT</p>
-      <p class="bio-block">
-        Gli interessi di ricerca includono ottimizzazione strutturale, sistemi passivi-attivi e strutture adattive
-        per edifici sostenibili. Di seguito alcune pubblicazioni selezionate.
-      </p>
+      <article class="card">
+        <h3>Research / Ricerca</h3>
+        <p>Research interests and publications, including IASS-IWSS 2026 contribution.</p>
+        <a href="research.html">Go to Research</a>
+      </article>
 
-      <h3>Publications / Pubblicazioni</h3>
-      <ul>
-        <li>
-          Senatore, G., Castriota Scanderbeg, F., Bartoli, G. (2026). “Topology Optimization of Passive-Active Continua
-          Under Eigenstrain Actuation with a Controlled-Compliance Objective”, abstract accepted for presentation at
-          IASS-IWSS 2026, Turin, Italy, Sep. 14–18, 2026.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Contact / Contattami -->
-    <section id="contact">
-      <h2>Contact / Contattami</h2>
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">E-mail:</span>
-          <a href="mailto:filippo.castriotascanderbeg@gmail.com">filippo.castriotascanderbeg@gmail.com</a>
-        </li>
-        <li>
-          <span class="contact-label">Phone / Cell:</span>
-          <a href="tel:+393280343416">+39 328 0343416</a>
-        </li>
-        <li>
-          <span class="contact-label">LinkedIn:</span>
-          <a href="https://www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b" target="_blank" rel="noopener noreferrer">
-            www.linkedin.com/in/filippo-castriota-scanderbeg-896a7925b
-          </a>
-        </li>
-        <li>
-          <span class="contact-label">Location:</span> Florence, Tuscany, Italy
-        </li>
-      </ul>
+      <article class="card">
+        <h3>Contact / Contattami</h3>
+        <p>Contact details and links for collaboration opportunities.</p>
+        <a href="contact.html">Go to Contact</a>
+      </article>
     </section>
   </main>
 
