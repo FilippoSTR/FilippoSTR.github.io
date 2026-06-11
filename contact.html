@@ -53,6 +53,12 @@
   font-size: 0.9rem;
 }
     nav a:hover { text-decoration: underline; }
+    nav a.active {
+      background: rgba(248, 248, 248, 0.65);
+      color: #303030;
+      border-radius: 999px;
+      padding: 0.2rem 0.5rem;
+    }
     main {
       max-width: 720px;
       margin: 2rem auto;
@@ -113,8 +119,8 @@
       <a href="projects.html" data-lang="it">Progetti</a>
       <a href="research.html" data-lang="en">Research</a>
       <a href="research.html" data-lang="it">Ricerca</a>
-      <a href="contact.html" data-lang="en">Contact</a>
-      <a href="contact.html" data-lang="it">Contatti</a>
+      <a href="contact.html" data-lang="en" class="active">Contact</a>
+      <a href="contact.html" data-lang="it" class="active">Contattami</a>
 
       <div class="lang-switcher">
         <button type="button" class="lang-btn" data-lang-switch="en">EN</button>
