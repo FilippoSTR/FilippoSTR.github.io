@@ -240,7 +240,7 @@ footer.site-footer, footer {
   align-items: flex-end;
   gap: 1rem;
   width: 100%;
-  min-height: 140px;
+  height: 160px;
   padding: 1.25rem 1.25rem;
   background-size: cover;
   background-position: center;
