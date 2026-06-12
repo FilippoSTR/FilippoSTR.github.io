@@ -225,26 +225,47 @@ footer.site-footer, footer {
 /* Projects page specific */
 .projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
 
-/* Card progetto dinamica: immagine + titolo + descrizione a tendina */
+/* Contenitore card progetto */
 .project-card {
-  background: #ffffff;
   border-radius: 0.5rem;
   border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
+  background: #ffffff;
 }
 
+/* TESTATA: immagine di sfondo + titolo sopra */
 .project-toggle {
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 1rem;
   width: 100%;
-  padding: 0.75rem 1rem;
-  background: transparent;
+  min-height: 140px;
+  padding: 1.25rem 1.25rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   text-align: left;
+  color: #f8f8f8;
+}
+
+/* overlay scuro sulla foto */
+.project-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15)
+  );
+}
+
+.project-toggle > * {
+  position: relative;
+  z-index: 1;
 }
 
 .project-toggle:focus-visible {
@@ -252,33 +273,28 @@ footer.site-footer, footer {
   outline-offset: 2px;
 }
 
-.project-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
 .project-heading h3 {
   margin: 0;
   font-size: 1.05rem;
+  color: #f8f8f8;
 }
 
-/* + / x a destra */
 .project-toggle-indicator {
   margin-left: auto;
   font-size: 1.2rem;
-  color: var(--muted);
+  color: #f8f8f8;
   transition: transform 0.2s ease;
 }
 
-/* Dettagli nascosti/mostrati con animazione */
+/* CORPO: descrizione, con sfondo bianco */
 .project-details {
   max-height: 0;
   overflow: hidden;
-  padding: 0 1rem;
-  transition: max-height 0.25s ease, padding-top 0.25s ease, padding-bottom 0.25s ease;
+  background: #ffffff;
+  padding: 0 1.25rem;
+  transition: max-height 0.25s ease,
+              padding-top 0.25s ease,
+              padding-bottom 0.25s ease;
 }
 
 .project-details p {
@@ -287,15 +303,15 @@ footer.site-footer, footer {
   margin: 0.5rem 0 1rem;
 }
 
-/* Stato aperto */
+/* Stato aperto: parte bassa visibile */
 .project-card.is-open .project-details {
   max-height: 400px;
-  padding-top: 0.25rem;
+  padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
 .project-card.is-open .project-toggle-indicator {
-  transform: rotate(45deg); /* + → x */
+  transform: rotate(45deg); /* + diventa x */
 }
 
 /* Research page specifics */
