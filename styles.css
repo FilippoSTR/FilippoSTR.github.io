@@ -299,9 +299,10 @@ footer.site-footer, footer {
   overflow: hidden;
   background: #ffffff;
   padding: 0;
+  opacity: 0;
   transition: max-height 0.25s ease,
-              padding-top 0.25s ease,
-              padding-bottom 0.25s ease;
+              padding 0.25s ease,
+              opacity 0.25s ease;
 }
 
 .project-details p {
@@ -313,8 +314,8 @@ footer.site-footer, footer {
 /* Stato aperto: parte bassa visibile */
 .project-card.is-open .project-details {
   max-height: 400px;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  opacity: 1;
 }
 
 .project-card.is-open .project-toggle-indicator {
