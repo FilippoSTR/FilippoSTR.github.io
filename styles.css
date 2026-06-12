@@ -112,7 +112,7 @@ main {
 
 .hero {
   background: transparent;
-  border-radius: 0;
+  border: none;
   margin: 1.5rem 1.25rem 2rem;
   padding: 1.5rem 1.25rem;
 }
