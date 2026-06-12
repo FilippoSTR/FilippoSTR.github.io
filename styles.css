@@ -298,7 +298,8 @@ footer.site-footer, footer {
   max-height: 0;
   overflow: hidden;
   background: #ffffff;
-  padding: 0 1.25rem;
+  /*padding: 0 1.25rem;*/
+  padding: 0;
   transition: max-height 0.25s ease,
               padding-top 0.25s ease,
               padding-bottom 0.25s ease;
