@@ -224,8 +224,79 @@ footer.site-footer, footer {
 
 /* Projects page specific */
 .projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-.project-card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
-.project-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.4rem; }
+
+/* Card progetto dinamica: immagine + titolo + descrizione a tendina */
+.project-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.project-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.project-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.project-heading h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* + / x a destra */
+.project-toggle-indicator {
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+/* Dettagli nascosti/mostrati con animazione */
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.25s ease, padding-top 0.25s ease, padding-bottom 0.25s ease;
+}
+
+.project-details p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+/* Stato aperto */
+.project-card.is-open .project-details {
+  max-height: 400px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.project-card.is-open .project-toggle-indicator {
+  transform: rotate(45deg); /* + → x */
+}
 
 /* Research page specifics */
 section { padding: 1.5rem 1.25rem; border-bottom: 1px solid var(--border); }
