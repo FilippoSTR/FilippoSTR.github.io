@@ -168,7 +168,7 @@ main {
 .card,
 .project-card {
   background: #ffffff;
-  border-radius: 0.5rem;
+  border: none;
   border: 1px solid var(--border);
 }
 
