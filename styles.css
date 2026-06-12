@@ -223,7 +223,7 @@ footer.site-footer, footer {
 .bio-block { margin-top: 0.25rem; margin-bottom: 1rem; }
 
 /* Projects page specific */
-.projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+.projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem; align-items: start; }
 
 /* Contenitore card progetto */
 .project-card {
@@ -298,7 +298,6 @@ footer.site-footer, footer {
   max-height: 0;
   overflow: hidden;
   background: #ffffff;
-  /*padding: 0 1.25rem;*/
   padding: 0;
   transition: max-height 0.25s ease,
               padding-top 0.25s ease,
