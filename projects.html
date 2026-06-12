@@ -140,7 +140,15 @@ progetto concettuale di un solaio nervato ispirato a Nervi (2024, Grasshopper, P
         if (!toggle) return;
 
         toggle.addEventListener('click', function () {
-          card.classList.toggle('is-open');
+          var isOpen = card.classList.contains('is-open');
+
+          cards.forEach(function (other) {
+            other.classList.remove('is-open');
+          });
+
+          if (!isOpen) {
+            card.classList.add('is-open');
+          }
         });
       });
     });
