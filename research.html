@@ -114,5 +114,27 @@ l’impatto ambientale dei sistemi strutturali rispetto alle soluzioni passive c
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="lang.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var cards = document.querySelectorAll('[data-project-card]');
+
+      cards.forEach(function (card) {
+        var toggle = card.querySelector('.project-toggle');
+        if (!toggle) return;
+
+        toggle.addEventListener('click', function () {
+          var isOpen = card.classList.contains('is-open');
+
+          cards.forEach(function (other) {
+            other.classList.remove('is-open');
+          });
+
+          if (!isOpen) {
+            card.classList.add('is-open');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
